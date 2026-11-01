@@ -91,7 +91,6 @@ Le programme détecte ces erreurs et affiche un message clair au lieu de planter
 
 ## Pistes d'amélioration
 
-- L'encodage « au plus 2 » génère une clause par triplet de cases, ce qui devient lourd pour de grandes régions : un encodage par compteur séquentiel serait plus compact.
 - Vérifier l'unicité de la solution.
 - Générer automatiquement des grilles.
 
