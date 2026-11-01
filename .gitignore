@@ -1,0 +1,11 @@
+# Fichiers compilés
+*.class
+
+# Fichier généré à chaque résolution
+output/
+src/output/
+
+# Rapport de cours et archives : pas dans le repo public
+*.pdf
+*.zip
+*.rar

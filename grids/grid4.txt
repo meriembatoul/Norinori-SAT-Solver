@@ -1,0 +1,5 @@
+3 3 1
+1 1
+1 1
+
+// test avec des dimensions déclarées incorrectes (Header dit 3x3 mais seulement 2x2 de données)

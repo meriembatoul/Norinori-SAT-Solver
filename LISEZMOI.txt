@@ -1,0 +1,64 @@
+     MODE D'EMPLOI
+
+                             DESCRIPTION
+
+Ce programme resout automatiquement des grilles de Norinori.
+Il prend en entree une grille definie par ses regions, genere
+une formule logique en forme normale conjonctive (fichier DIMACS),
+la soumet au solveur SAT4J, puis affiche la solution.
+
+                             DEUX MODES D'UTILISATION
+
+
+1 - MODE GRAPHIQUE 
+   Lancer le programme sans argument :
+     java -cp .;../lib/org.ow2.sat4j.core-2.3.6.jar Main   (Windows)
+     java -cp .:../lib/org.ow2.sat4j.core-2.3.6.jar Main  (Linux/Mac)
+
+   Une fenetre s'ouvre. Deroulement :
+     a) Saisir le nombre de lignes, colonnes et regions puis valider.
+     b) Une grille vide s'affiche. Selectionner un numero de region
+        dans la barre du haut, puis cliquer sur les cases pour
+        leur attribuer cette region.
+     c) Remplir toutes les cases, puis cliquer sur "Resoudre".
+     d) La solution s'affiche
+     e) Cliquer sur "Nouvelle grille" pour recommencer.
+
+2- MODE TERMINAL
+   Passer le chemin d'un fichier grille en argument :
+     java -cp .;../lib/org.ow2.sat4j.core-2.3.6.jar Main ../grids/grid1.txt
+
+   La solution s'affiche dans le terminal: Les cases noires
+   sont indiquees par leur numero de region entre crochets.
+
+   Exemple d'affichage :
+     [1] 1   2   2
+      1  [1] 2  [2]
+      3   3  [3][3]
+      4  [4] 4   4
+
+                             FORMAT DU FICHIER GRILLE:
+
+Ligne 1 : n m r    (n lignes, m colonnes, r regions)
+Lignes suivantes : matrice de n lignes et m colonnes,
+chaque entier indiquant le numero de region de la case (a partir de 1).
+
+Exemple (grille 4x4, 4 regions) :
+  4 4 4
+  1 1 2 2
+  1 1 2 2
+  3 3 4 4
+  3 3 4 4
+
+                             FICHIERS D'EXEMPLE FOURNIS
+
+grids/grid1.txt : fichier vide (test de détection d’absence de données)
+grids/grid2.txt : grille minimale 1x2 avec une seule région (cas valide simple)
+grids/grid3.txt : grille contenant des valeurs invalides (0 et négatives)
+grids/grid4.txt : dimensions déclarées incorrectes (header 3x3 mais données incomplètes)
+grids/grid5.txt : nombre de régions incohérent (valeurs de régions supérieures à celles déclarées)
+grids/grid6.txt : grille valide utilisée dans le rapport (6x6, 7 régions)
+
+                             FICHIER DIMACS GENERE
+
+Le fichier output/problem.cnf est cree automatiquement a chaque resolution. Il contient la formule CNF au format standard DIMACS.

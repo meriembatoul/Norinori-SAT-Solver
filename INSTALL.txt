@@ -1,0 +1,45 @@
+PRE-REQUIS
+
+
+1. Java JDK 21 ou superieur
+   Telechargement : https://adoptium.net
+
+2. Bibliotheque SAT4J (solveur SAT en Java)
+   Telechargement : https://mvnrepository.com/artifact/org.ow2.sat4j/org.ow2.sat4j.core/2.3.6
+   Fichier requis : org.ow2.sat4j.core/2.3.6
+   ce fichier doit ce placer dans le dossier lib/ avant toute compilation
+
+
+
+COMPILATION
+
+
+Se placer dans le dossier src/ puis executer la commande suivante :
+
+  Sous Windows :
+  javac -cp .;../lib/org.ow2.sat4j.core-2.3.6.jar *.java
+
+  Sous Linux/Mac :
+  javac -cp .:../lib/org.ow2.sat4j.core-2.3.6.jar *.java
+
+
+
+EXECUTION
+
+ 
+Mode graphique (interface visuelle) :
+
+  Sous Windows :
+  java -cp .;../lib/org.ow2.sat4j.core-2.3.6.jar Main
+
+  Sous Linux/Mac :
+  java -cp .:../lib/org.ow2.sat4j.core-2.3.6.jar Main
+
+
+Mode terminal (avec un fichier grille en argument) :
+
+  Sous Windows :
+  java -cp .;../lib/org.ow2.sat4j.core-2.3.6.jar Main ../grids/grid1.txt
+
+  Sous Linux/Mac :
+  java -cp .:../lib/org.ow2.sat4j.core-2.3.6.jar Main ../grids/grid1.txt
